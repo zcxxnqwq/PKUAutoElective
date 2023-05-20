@@ -15,6 +15,7 @@
 - 该项目的验证码识别模型使用 Python3.8.16，Pytorch环境下进行训练和测试
 - 使用 74.5w 张图片进行训练，测试集上能达到 98%的准确率。
 - 使用 cpu 识别单张图片平均耗时 5-20ms，准确率和耗时均优于打码平台。
+- 使用时无需安装Pytorch和TensorFlow
 
 ps: 验证码训练集使用 Kaptcha 工具模仿生成（图片样例见[test/data](./test/data)），在选课网上能达到较高的准确率（96%以上），该模型也可以作为预训练模型或用于自举（[bootstrap.py](./bootstrap.py)，该代码参考了项目：[https://github.com/zhongxinghong/PKUElectiveCaptcha2021Spring](https://github.com/zhongxinghong/PKUElectiveCaptcha2021Spring/blob/master/bootstrap.py))
 
