@@ -22,7 +22,7 @@ from .parser import get_tables, get_courses, get_courses_with_detail, get_sida
 from .hook import _dump_request
 from .iaaa import IAAAClient
 from .elective import ElectiveClient
-from .const import CAPTCHA_CACHE_DIR, USER_AGENT_LIST, WEB_LOG_DIR, CNN_MODEL_FILE
+from .const import CAPTCHA_CACHE_DIR, USER_AGENT_LIST, WEB_LOG_DIR, CNN_MODEL_FILE, CAPTCHA_LABELS_FILE
 from .exceptions import *
 from ._internal import mkdir
 
@@ -51,7 +51,7 @@ config.check_supply_cancel_page(supply_cancel_page)
 _USER_WEB_LOG_DIR = os.path.join(WEB_LOG_DIR, config.get_user_subpath())
 mkdir(_USER_WEB_LOG_DIR)
 
-recognizer = CaptchaRecognizer(CNN_MODEL_FILE)
+recognizer = CaptchaRecognizer(CNN_MODEL_FILE, CAPTCHA_LABELS_FILE)
 
 electivePool = Queue(maxsize=elective_client_pool_size)
 reloginPool = Queue(maxsize=elective_client_pool_size)

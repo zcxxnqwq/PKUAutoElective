@@ -7,19 +7,16 @@ import os
 import time
 import numpy as np
 import cv2
-import torch
-from .processor import split_captcha
-from .cnn import CaptchaCNN
-
+import ddddocr
+from autoelective.const import CAPTCHA_LABELS_FILE, CNN_MODEL_FILE
 
 class Captcha(object):
 
-    __slots__ = ['_code','_im_data','_im_segs']
+    __slots__ = ['_code','_im_data']
 
-    def __init__(self, code, im_data, im_segs):
+    def __init__(self, code, im_data):
         self._code = code
         self._im_data = im_data
-        self._im_segs = im_segs
 
     @property
     def code(self):
@@ -34,35 +31,22 @@ class Captcha(object):
     def save(self, folder):
         code = self._code
         data = self._im_data
-        segs = self._im_segs
         timestamp = int(time.time() * 1000)
 
-        filepath = os.path.join(folder, "%s_%d.gif" % (code, timestamp))
+        filepath = os.path.join(folder, "%s_%d.jpg" % (code, timestamp))
         with open(filepath, 'wb') as fp:
             fp.write(data)
-
-        for ix, M in enumerate(segs):
-            filepath = os.path.join(folder, "%s_c%d_%d.png" % (code, ix, timestamp))
-            cv2.imwrite(filepath, M)
 
 
 class CaptchaRecognizer(object):
 
-    def __init__(self, model_file):
-        self._model = CaptchaCNN()
-        self._model.load_state_dict(torch.load(model_file, map_location='cpu'))
-        self._model.eval()
+    def __init__(self, model_file=CNN_MODEL_FILE, charsets_path=CAPTCHA_LABELS_FILE):
+        self._model = ddddocr.DdddOcr(det=False, ocr=False, import_onnx_path=model_file, charsets_path=charsets_path , show_ad=False)
 
     def recognize(self, im_data):
         assert isinstance(im_data, bytes)
 
-        N = 52
-        labels = self._model.CAPTCHA_LABELS
+        im_segs = []
+        code = self._model.classification(im_data)
 
-        im_segs = split_captcha(im_data)
-        Xlist = np.array(im_segs, dtype=np.float32).reshape(-1, 1, N, N)
-        ylist = self._model(torch.from_numpy(Xlist))
-
-        code = ''.join( labels[ix] for ix in torch.argmax(ylist, dim=1) )
-
-        return Captcha(code, im_data, im_segs)
+        return Captcha(code, im_data)
