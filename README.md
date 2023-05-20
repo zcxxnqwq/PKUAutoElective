@@ -1,4 +1,4 @@
-# PKUAutoElective2023
+# PKUAutoElective2023-dddd
 
 北大选课网 **补退选** 阶段自动选课小工具 (2023.05.20)
 
