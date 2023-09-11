@@ -6,16 +6,16 @@
 
 - 适配 2023 年春季学期北大选课网环境，目前支持 `本科生（含辅双）` 和 `研究生` 选课
 
-本项目在 [zhongxinghong/PKUAutoElective](https://github.com/zhongxinghong/PKUAutoElective)上进行修改，仅将验证码识别模型进行替换，使用该工具**只需要安装ddddocr库**（已放在requirements.txt文件中，可以通过pip安装），而**不必安装 Pytorch 和 TensorFlow**。其余使用方法参照原项目
+本项目在 [zhongxinghong/PKUAutoElective](https://github.com/zhongxinghong/PKUAutoElective)上进行修改，仅将验证码识别模型进行替换，使用该工具**只需要安装 ddddocr 库**（已放在 requirements.txt 文件中，可以通过 pip 安装），而**不必安装 Pytorch 和 TensorFlow**。其余使用方法参照原项目
 
 ---
 
 ## 模型性能：
 
-- 该项目的验证码识别模型使用 Python3.8.16，Pytorch环境下进行训练和测试
+- 该项目的验证码识别模型使用 Python3.8.16，Pytorch 环境下进行训练和测试
 - 使用 74.5w 张图片进行训练，测试集上能达到 98%的准确率。
 - 使用 cpu 识别单张图片平均耗时 5-20ms，准确率和耗时均优于打码平台。
-- 使用时无需安装Pytorch和TensorFlow
+- 使用时无需安装 Pytorch 和 TensorFlow
 
 ps: 验证码训练集使用 Kaptcha 工具模仿生成（图片样例见[test/data](./test/data)），在选课网上能达到较高的准确率（96%以上），该模型也可以作为预训练模型或用于自举（[bootstrap.py](./bootstrap.py)，该代码参考了项目：[https://github.com/zhongxinghong/PKUElectiveCaptcha2021Spring](https://github.com/zhongxinghong/PKUElectiveCaptcha2021Spring/blob/master/bootstrap.py))
 
@@ -36,13 +36,15 @@ ps: 验证码训练集使用 Kaptcha 工具模仿生成（图片样例见[test/d
 
 ### Python 3
 
-该项目至少需要 Python 3，可以从 [Python 官网](https://www.python.org/) 下载并安装（项目开发环境为 Python 3.8.16）
+该项目至少需要 Python 3，可以从 [Python 官网](https://www.python.org/) 下载并安装（项目开发环境为 Python 3.8.16，版本太高或太低可能不适配）
 
 例如在 Linux 下运行：
 
 ```console
 $ apt-get install python3
 ```
+
+在 Windows 上可以在 Python 官网下载
 
 ### Repo
 
@@ -57,11 +59,12 @@ $ git clone https://github.com/Hovennnnn/PKUAutoElective.git
 ### Packages
 
 安装依赖包（该示例中使用清华镜像源以加快下载速度）
+你把文件下载在哪，下面“项目的路径”这里就写啥，比如我的项目路径是：C:\Users\matebook14\Documents\codefield\python_code\PKUAutoElective）
 
 ```console
+$ cd 项目的路径
 $ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
-
 
 ### 验证码识别模块测试
 
