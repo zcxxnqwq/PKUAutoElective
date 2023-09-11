@@ -59,7 +59,9 @@ $ git clone https://github.com/Hovennnnn/PKUAutoElective.git
 ### Packages
 
 安装依赖包（该示例中使用清华镜像源以加快下载速度）
-你把文件下载在哪，下面“项目的路径”这里就写啥，比如我的项目路径是：C:\Users\matebook14\Documents\codefield\python_code\PKUAutoElective）
+你把文件下载在哪，下面命令行里“项目的路径”这里就写啥，比如我的项目路径是：C:\Users\matebook14\Documents\codefield\python_code\PKUAutoElective）
+
+命令行运行：
 
 ```console
 $ cd 项目的路径
@@ -68,12 +70,16 @@ $ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ### 验证码识别模块测试
 
-这个测试旨在检查与验证码识别模块相关的依赖包是否正确安装
+这个测试旨在检查与验证码识别模块相关的依赖包是否正确安装。命令行运行：
 
 ```console
 $ cd test/
 $ python3 test_cnn.py
+```
 
+显示：
+
+```
 Captcha('2a2m') True 耗时:  9.960195541381836 ms
 Captcha('2a3cx') True 耗时:  4.985332489013672 ms
 Captcha('2a5c') True 耗时:  3.984689712524414 ms
