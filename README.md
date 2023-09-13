@@ -36,7 +36,7 @@ ps: 验证码训练集使用 Kaptcha 工具模仿生成（图片样例见[test/d
 
 ### Python 3
 
-该项目至少需要 Python 3，可以从 [Python 官网](https://www.python.org/) 下载并安装（项目开发环境为 Python 3.8.16，版本太高或太低可能不适配）
+该项目至少需要 Python 3，可以从 [Python 官网](https://www.python.org/downloads/) 下载并安装（项目开发环境为 Python 3.8.16，版本太高或太低可能不适配）
 
 例如在 Linux 下运行：
 
@@ -58,8 +58,7 @@ $ git clone https://github.com/Hovennnnn/PKUAutoElective.git
 
 ### Packages
 
-安装依赖包（该示例中使用清华镜像源以加快下载速度）
-你把文件下载在哪，下面命令行里“项目的路径”这里就写啥，比如我的项目路径是：C:\Users\matebook14\Documents\codefield\python_code\PKUAutoElective）
+安装依赖包（该示例中使用清华镜像源以加快下载速度，“项目的路径”因人而异）
 
 命令行运行：
 
@@ -67,6 +66,10 @@ $ git clone https://github.com/Hovennnnn/PKUAutoElective.git
 $ cd 项目的路径
 $ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
+- 你把文件下载在哪，上面命令行里“项目的路径”这里就写啥，比如我的项目路径是：C:\Users\123\Documents\codefield\python_code\PKUAutoElective）
+- 关于"cd"命令是什么，可以参考[Wikipedia](<https://zh.wikipedia.org/zh-sg/Cd_(命令)>)的解释
+- 前面"$"符号不用输入，它表示终端的提示符
 
 ### 验证码识别模块测试
 
