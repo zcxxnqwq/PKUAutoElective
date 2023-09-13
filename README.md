@@ -36,7 +36,7 @@ ps: 验证码训练集使用 Kaptcha 工具模仿生成（图片样例见[test/d
 
 ### Python 3
 
-该项目至少需要 Python 3，可以从 [Python 官网](https://www.python.org/downloads/) 下载并安装（项目开发环境为 Python 3.8.16，版本太高或太低可能不适配）
+该项目至少需要 Python 3，可以从 [Python 官网](https://www.python.org/downloads/) 下载并安装（项目开发环境为 Python 3.8.16，建议 3.8<=Python版本<3.11, 版本太高或太低可能不适配）
 
 例如在 Linux 下运行：
 
