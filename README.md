@@ -4,7 +4,7 @@
 
 - 更新了**验证码识别模型**，使用 CNN+LSTM+CTC 的经典网络识别不定长验证码（4~5 个字符），训练过程使用了项目[dddd_trainer](https://github.com/sml2h3/dddd_trainer)
 
-- 适配 2023 年春季学期北大选课网环境，目前支持 `本科生（含辅双）` 和 `研究生` 选课
+- 适配 2023 年秋季学期北大选课网环境，目前支持 `本科生（含辅双）` 和 `研究生` 选课
 
 本项目在 [zhongxinghong/PKUAutoElective](https://github.com/zhongxinghong/PKUAutoElective)上进行修改，仅将验证码识别模型进行替换，使用该工具**只需要安装 ddddocr 库**（已放在 requirements.txt 文件中，可以通过 pip 安装），而**不必安装 Pytorch 和 TensorFlow**。其余使用方法参照原项目
 
