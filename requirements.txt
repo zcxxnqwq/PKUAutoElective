@@ -5,3 +5,4 @@ pyyaml>=3.13
 numpy==1.23.5
 ddddocr==1.4.7
 pillow==9.5.0
+Werkzeug==2.3.4
