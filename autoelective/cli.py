@@ -9,7 +9,7 @@ from multiprocessing import Queue
 from . import __version__, __date__
 
 
-def create_default_parser():
+def create_default_parser(): #解析命令行参数
 
     parser = OptionParser(
         description='PKU Auto-Elective Tool v%s (%s)' % (__version__, __date__),
